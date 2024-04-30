@@ -1,0 +1,12 @@
+add(K key, V... values): Set에 하나 이상의 멤버를 추가.
+remove(K key, Object... values): Set에서 하나 이상의 멤버를 제거.
+isMember(K key, Object o): Set에 특정 멤버가 있는지 확인.
+members(K key): Set의 모든 멤버를 반환.
+size(K key): Set의 크기(멤버 수)를 반환.
+difference(K key, K otherKey): 두 Set 간의 차집합을 반환.
+union(K key, K otherKey): 두 Set 간의 합집합을 반환.
+intersect(K key, K otherKey): 두 Set 간의 교집합을 반환.
+randomMember(K key): Set에서 무작위로 하나의 멤버를 반환.
+pop(K key): Set에서 무작위로 하나의 멤버를 제거하고 반환.
+move(K key, V value, K destKey): Set에서 특정 멤버를 다른 Set으로 이동.
+scan(K key, ScanOptions options): Set을 스캔하여 멤버를 검색.

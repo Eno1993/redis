@@ -1,0 +1,12 @@
+put(K key, HK hashKey, HV value): Hash에 특정 키(Key)의 특정 필드(Field)와 값을 저장.
+putAll(K key, Map<? extends HK, ? extends HV> m): Hash에 여러 필드와 값을 일괄 저장.
+get(K key, Object hashKey): Hash에서 특정 키(Key)의 특정 필드(Field)의 값을 가져옴.
+entries(K key): Hash의 모든 필드와 값을 가져옴.
+delete(K key, Object... hashKeys): Hash에서 특정 키(Key)의 하나 이상의 필드를 삭제.
+hasKey(K key, Object hashKey): Hash에 특정 키(Key)의 특정 필드(Field)가 존재하는지 확인.
+keys(K key): Hash의 모든 필드를 가져옴.
+values(K key): Hash의 모든 값을 가져옴.
+size(K key): Hash의 크기(필드 수)를 반환.
+increment(K key, HK hashKey, long delta): Hash의 특정 필드의 값을 증가.
+expire(K key, long timeout, TimeUnit unit): Hash에 대한 만료 시간을 설정.
+persist(K key): Hash의 만료 시간을 제거하여 영속적으로 저장.

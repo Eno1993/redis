@@ -1,0 +1,8 @@
+add(K key, V value, double score): Sorted Set에 멤버를 추가.
+remove(K key, Object... values): Sorted Set에서 하나 이상의 멤버를 제거.
+removeRange(K key, long start, long end): Sorted Set에서 지정된 범위의 멤버들을 제거.
+range(K key, long start, long end): Sorted Set에서 지정된 범위의 멤버들을 가져옴.
+rangeByScore(K key, double min, double max): Sorted Set에서 score가 주어진 범위 내에 있는 멤버들을 가져옴.
+rank(K key, Object value): Sorted Set에서 특정 멤버의 순위를 가져옴.
+score(K key, Object value): Sorted Set에서 특정 멤버의 score 값을 가져옴.
+size(K key): Sorted Set의 크기(멤버 수)를 반환.

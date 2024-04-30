@@ -1,0 +1,13 @@
+leftPush(K key, V value): 리스트의 왼쪽에 요소를 추가.
+leftPop(K key): 리스트의 왼쪽에서 요소를 꺼냄.
+rightPush(K key, V value): 리스트의 오른쪽에 요소를 추가.
+rightPop(K key): 리스트의 오른쪽에서 요소를 꺼냄.
+range(K key, long start, long end): 리스트의 지정된 범위 내의 요소를 반환.
+trim(K key, long start, long end): 리스트를 지정된 범위 내의 요소로 잘라냄.
+size(K key): 리스트의 길이를 반환.
+index(K key, long index): 리스트의 지정된 인덱스 위치의 요소를 반환.
+set(K key, long index, V value): 리스트의 지정된 인덱스 위치의 요소를 새 값으로 설정.
+remove(K key, long count, Object value): 리스트에서 count만큼 value와 동일한 요소를 제거.
+* count==0 : 모든 요소 삭제, count<0 : 오른쪽부터 count 개수 만큼 삭제, count>0 : 왼쪽부터 count 개수 만큼 삭제
+leftPushAll(K key, V... values): 리스트의 왼쪽에 여러 요소를 추가.
+rightPushAll(K key, V... values): 리스트의 오른쪽에 여러 요소를 추가.
