@@ -14,11 +14,11 @@ public class RedisService {
 
     private final RedisTemplate<String, Object> redisTemplate;
 
-    public void addWithList(String redisKey, String data){
+    public void addWithList(String redisKey, Object data){
         redisTemplate.opsForList().rightPush(redisKey, data);
     }
 
-    public void removeWithList(String redisKey, String data){
+    public void removeWithList(String redisKey, Object data){
         redisTemplate.opsForList().remove(redisKey, 0, data);
     }
 
@@ -31,15 +31,15 @@ public class RedisService {
         return res;
     }
 
-    public void addWithSet(String redisKey, String data){
+    public void addWithSet(String redisKey, Object data){
         redisTemplate.opsForSet().add(redisKey, data);
     }
 
-    public void removeWithSet(String redisKey, String data){
+    public void removeWithSet(String redisKey, Object data){
         redisTemplate.opsForSet().remove(redisKey, data);
     }
 
-    public boolean isContainWithSet(String redisKey, String data){
+    public boolean isContainWithSet(String redisKey, Object data){
         return redisTemplate.opsForSet().isMember(redisKey, data);
     }
 
@@ -64,20 +64,20 @@ public class RedisService {
         return res;
     }
 
-    public void addWithSortedSet(String redisKey, String data){
+    public void addWithSortedSet(String redisKey, Object data){
         redisTemplate.opsForZSet().add(redisKey, data, System.currentTimeMillis());
     }
 
-    public void removeWithSortedSet(String redisKey, String data){
+    public void removeWithSortedSet(String redisKey, Object data){
         redisTemplate.opsForZSet().remove(redisKey, data);
     }
 
-    public boolean isContainWithSortedSet(String redisKey, String data){
+    public boolean isContainWithSortedSet(String redisKey, Object data){
         Double score = redisTemplate.opsForZSet().score(redisKey, data);
         return score!=null;
     }
 
-    public long orderWithSortedSet(String redisKey, String data){
+    public long orderWithSortedSet(String redisKey, Object data){
         Long rank = redisTemplate.opsForZSet().rank(redisKey, data);
         if(rank!=null){
             return rank;
@@ -95,19 +95,19 @@ public class RedisService {
         return res;
     }
 
-    public void addWithHash(String redisKey, String key, String value){
+    public void addWithHash(String redisKey, Object key, Object value){
         redisTemplate.opsForHash().put(redisKey, key, value);
     }
 
-    public void removeWithHash(String redisKey, String key){
+    public void removeWithHash(String redisKey, Object key){
         redisTemplate.opsForHash().delete(redisKey, key);
     }
 
-    public boolean isContainWithHash(String redisKey, String key){
+    public boolean isContainWithHash(String redisKey, Object key){
         return redisTemplate.opsForHash().hasKey(redisKey, key);
     }
 
-    public String getWithHash(String redisKey, String key){
+    public String getWithHash(String redisKey, Object key){
         Object object = redisTemplate.opsForHash().get(redisKey, key);
         if(object!=null){
             return (String) object;
